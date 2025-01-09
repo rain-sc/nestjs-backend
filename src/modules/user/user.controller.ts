@@ -20,4 +20,19 @@ export class UserController {
   getUser(@Param('id', ParseIntPipe) id: number) {
     return this.userService.findOne(id);
   }
+
+  @Get()
+  getAllUer() {
+    return this.userService.findAll();
+  }
+
+  @Post()
+  create(@Body() body) {
+    return this.userService.create(body);
+  }
+
+  @Delete(':id')
+  remove(@Param('id', ParseIntPipe) id: number) {
+    return this.userService.remove(id);
+  }
 }

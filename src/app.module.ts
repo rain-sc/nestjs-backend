@@ -8,9 +8,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
-    UserModule,
-    AuthModule,
-    BookModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: '127.0.0.1',
@@ -20,6 +17,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       database: 'vebn',
       autoLoadEntities: true,
     }),
+    UserModule,
+    AuthModule,
+    BookModule,
   ],
   controllers: [AppController],
   providers: [AppService],
